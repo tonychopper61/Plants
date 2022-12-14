@@ -41,27 +41,23 @@ public class MainActivity extends AppCompatActivity {
         spinnerFilter=findViewById(R.id.filter);
         spinnerFilter.setAdapter(adapter);
 
-        new GetProducts().execute(); //Подключение к нашей API в отдельном потоке
+        new GetProducts().execute();
     }
 
     private class GetProducts extends AsyncTask<Void, Void, String> {
         @Override
         protected String doInBackground(Void... voids) {
             try {
-                URL url = new URL("https://ngknn.ru:5001/NGKNN/короткихас/api/Plants");//Строка подключения к нашей API
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection(); //вызываем нашу API
+                URL url = new URL("https://ngknn.ru:5001/NGKNN/короткихас/api/Plants");
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                /*
-                BufferedReader успрощает чтение текста из потока символов
-                InputStreamReader преводит поток байтов в поток символов
-                connection.getInputStream() получает поток байтов
-                */
+
                 StringBuilder result = new StringBuilder();
                 String line = "";
 
                 while ((line = reader.readLine()) != null) {
-                    result.append(line);//кладет строковое значение в потоке
+                    result.append(line);
                 }
                 return result.toString();
 
@@ -75,11 +71,11 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(s);
             try
             {
-                JSONArray tempArray = new JSONArray(s);//преоброзование строки в json массив
+                JSONArray tempArray = new JSONArray(s);
                 for (int i = 0;i<tempArray.length();i++)
                 {
 
-                    JSONObject productJson = tempArray.getJSONObject(i);//Преобразование json объекта в нашу структуру
+                    JSONObject productJson = tempArray.getJSONObject(i);
                     Mask tempProduct = new Mask(
                             productJson.getInt("ID"),
                             productJson.getString("Species"),

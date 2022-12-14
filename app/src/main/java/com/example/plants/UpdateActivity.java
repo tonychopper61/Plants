@@ -41,7 +41,7 @@ public class UpdateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
 
-        mask=getIntent().getParcelableExtra("Bar");
+        mask=getIntent().getParcelableExtra("Plants");
         imageView=findViewById(R.id.image_base);
 
         Name=findViewById(R.id.UpName);

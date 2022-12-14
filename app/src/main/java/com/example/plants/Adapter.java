@@ -83,7 +83,7 @@ public class Adapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent intenDetalis=new Intent(mContext,UpdateActivity.class);
-                intenDetalis.putExtra("Bar",mask);
+                intenDetalis.putExtra("Plants",mask);
                 mContext.startActivity(intenDetalis);
             }
         });
