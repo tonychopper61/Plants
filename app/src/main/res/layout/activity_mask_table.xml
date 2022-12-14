@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6A9D8D8F"
+    tools:context="com.example.plants.Mask">
+
+    <ImageView
+        android:id="@+id/Image"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/plant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+
+    <TextView
+        android:id="@+id/textSpecies"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:ellipsize="end"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/textPrice"
+        app:layout_constraintStart_toEndOf="@+id/Image"
+        app:layout_constraintTop_toTopOf="@+id/Image"
+        tools:text="Вид" />
+
+    <TextView
+        android:id="@+id/textPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:ellipsize="end"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textSpecies"
+        app:layout_constraintTop_toTopOf="@+id/Image"
+        tools:text="Цена" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
