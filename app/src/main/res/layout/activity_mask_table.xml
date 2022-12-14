@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6A9D8D8F"
+    android:background="@color/teal_700"
     tools:context="com.example.plants.Mask">
 
     <ImageView
